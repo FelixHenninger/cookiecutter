@@ -1,15 +1,15 @@
 Package: cookiecutter
-Title: What the Package Does (One Line, Title Case)
+Title: Generate Project Files from a Template
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Authors@R:
+    person(given = "Felix",
+           family = "Henninger",
+           role = c("aut", "cre", "cph"),
+           email = "mailbox@felixhenninger.com",
+           comment = c(ORCID = "0000-0002-7730-9511"))
+Description: Cookiecutter helps you generate project files and directories following a pre-made template. You can specify variables to customize file names and content, and flexibly adapt the template to your needs.
+Cookiecutter for R implements a subset of the excellent cookiecutter package for the Python programming language (https://github.com/cookiecutter/), and aims to be largely compatible with the original cookiecutter template format.
+License: Apache License (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
