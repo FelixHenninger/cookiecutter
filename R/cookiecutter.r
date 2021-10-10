@@ -59,9 +59,40 @@ bake <- function(
   overwrite=F,
   no_input=F
 ) {
-  # TODO: Extract template; for the moment we assume that the template
-  # is an entire directory
-  template_dir <- template
+  # Supported archive file types
+  archive_mimes <- c(
+    'application/gzip',
+    'application/x-tar',
+    'application/zip'
+    # TODO: could add .tar.xz; .tar.bz2 doesn't seem to be recognized by mime
+  )
+
+  # Use template directory or extract archive if required
+  if (fs::is_dir(template)) {
+    template_dir <- template
+    archive_target <- NA
+  } else if (
+    fs::is_file(template) &&
+    mime::guess_type(template) %in% archive_mimes
+  ) {
+    archive_target <- fs::path_temp('cookiecutter.archive')
+    fs::dir_create(archive_target)
+
+    switch (mime::guess_type(template),
+      'application/gzip' = utils::untar(template, exdir = archive_target),
+      'application/x-tar' = utils::untar(template, exdir = archive_target),
+      'application/zip' = utils::unzip(template, exdir = archive_target),
+    )
+
+    template_dir <- archive_target
+  } else {
+    rlang::abort(paste(
+      'Can\'t figure out what to do with template', template, '\u2013',
+      'it doesn\'t look like a directory,',
+      'nor like an archive file I can work with (.zip, .tar.gz).',
+      'Could you take a look please?'
+    ))
+  }
 
   # Check template directory status
   if (!fs::dir_exists(template_dir))
@@ -98,4 +129,9 @@ bake <- function(
     exclude=c('cookiecutter.json'),
     overwrite=overwrite
   )
+
+  # Clean up
+  if (!is.na(archive_target)) {
+    fs::dir_delete(archive_target)
+  }
 }
