@@ -1,0 +1,16 @@
+url: https://felixhenninger.github.io/cookiecutter
+
+authors:
+  Felix Henninger:
+    href: https://felixhenninger.com
+
+template:
+  bootstrap: 5
+  bslib:
+    font-family-sans-serif: '"Inter var", "Inter", system-ui;'
+    font-weight-semibold: 450
+    font-weight-bolder: 500
+    font-weight-bold: 600
+    headings-margin-bottom: 1rem
+    hr-margin-y: 4rem
+    line-height-base: 1.6
