@@ -126,6 +126,7 @@ bake <- function(
     template_dir,
     output_dir,
     context,
+    context_prefix='cookiecutter',
     exclude=c('cookiecutter.json'),
     overwrite=overwrite
   )
