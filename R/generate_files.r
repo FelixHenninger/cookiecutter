@@ -3,6 +3,7 @@
 #' @param template_dir Template directory to copy
 #' @param output_dir Target directory to copy to (defaults to project directory)
 #' @param context Data available in templates
+#' @param context_prefix Prefix key to apply to context data (see description)
 #' @param exclude Files to exclude, as an array of paths with respect to
 #'  the template directory
 #' @param overwrite Whether to overwrite existing files
@@ -13,6 +14,7 @@ generate_files <- function(
   template_dir=NA,
   output_dir='.',
   context=list(),
+  context_prefix=NA,
   exclude=c(),
   overwrite=F
 ) {
@@ -24,6 +26,13 @@ generate_files <- function(
 
   # Iterate through source files
   template_files <- list.files(template_dir, recursive = T)
+
+  # Add context prefix if specified
+  if (!is.na(context_prefix)) {
+    temp <- list()
+    temp[[context_prefix]] <- context
+    context <- temp
+  }
 
   for (template_path in template_files) {
     # Skip excluded files
