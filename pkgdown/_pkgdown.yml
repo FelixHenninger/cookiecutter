@@ -14,3 +14,9 @@ template:
     headings-margin-bottom: 1rem
     hr-margin-y: 4rem
     line-height-base: 1.6
+
+footer:
+  structure:
+    left: authors
+  components:
+    authors: Made with️ 💛 by [numbercrunchers](https://nmbrcrnch.rs)

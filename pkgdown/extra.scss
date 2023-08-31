@@ -1,0 +1,156 @@
+@import url('https://rsms.me/inter/inter.css');
+
+// Assorted template customizations
+.page-header {
+    margin-bottom: 2 * $spacer;
+    img.logo {
+        background: white;
+        width: 20rem;
+    }
+}
+
+.ref-description p:first-child {
+    font-weight: 475;
+}
+
+.navbar {
+    .navbar-brand {
+        font-weight: 500;
+    }
+    .navbar-brand + .nav-text {
+        font-weight: 350;
+    }
+    .nav-link {
+        font-weight: 410;
+        @include media-breakpoint-up(md) {
+            margin: 0 0.05rem;
+        }
+    }
+}
+
+
+// Show logo only on homepage
+.page-header img.logo {
+    display: none;
+}
+.template-home .page-header img.logo {
+    display: inline-block;
+}
+
+@include media-breakpoint-down(md) {
+    .page-header h1 {
+        text-align: center;
+    }
+    .page-header img.logo {
+        display: block;
+        float: none;
+        margin: 2.5rem auto 1.5rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    // Space under toolbar
+    .row > main, .row > aside {
+        margin-top: 4.5 * $spacer;
+    }
+    // Sidebar height relative to main text
+    .row > aside {
+        padding-top: 0.5 * $spacer;
+    }
+    // Space above footer
+    footer {
+        margin-top: 2 * $spacer;
+    }
+}
+
+.template-reference-index {
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+.template-reference-topic {
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 510;
+        margin-top: 2 * $spacer;
+    }
+    dl dt {
+        font-weight: 500;
+    }
+}
+
+.template-article {
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.25rem;
+    }
+    h5 {
+        font-size: 1.0rem;
+    }
+}
+
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    margin-top: 1.75 * $spacer;
+
+    // Align code font size
+    code {
+        font-size: 1.005em;
+    }
+}
+
+b, strong {
+    font-weight: 575;
+}
+
+// Details / summary
+// (a poor person's collapsible / accordion)
+
+details {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: ($spacer * .5) ($spacer * .5) 0;
+    margin: ($spacer * 2) 0;
+
+    summary {
+        font-weight: 475;
+        margin: ($spacer * -.5) ($spacer * -.5) 0;
+        padding: $spacer * .5;
+        list-style: none;
+    }
+
+    summary::marker,
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    summary::after {
+        content: "+";
+        font-weight: 200;
+        float: right;
+        margin-right: $spacer * .25;
+    }
+
+    hr {
+        margin: $spacer 0 $spacer;
+    }
+}
+
+details[open] {
+    padding: $spacer * .5;
+
+    summary {
+        border-bottom: 1px solid $border-color;
+        margin-bottom: $spacer * .5;
+    }
+    summary::after {
+        content: "-"
+    }
+}
+
+// Overrides for cookiecutter
+.template-home .page-header {
+    min-height: 0;
+}
