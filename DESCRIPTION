@@ -1,14 +1,15 @@
 Package: cookiecutter
 Title: Generate Project Files from a Template
 Version: 0.0.0.9000
-Authors@R:
+Authors@R: c(
     person(given = "Felix",
            family = "Henninger",
            role = c("aut", "cre", "cph"),
            email = "mailbox@felixhenninger.com",
-           comment = c(ORCID = "0000-0002-7730-9511"))
-Description: Cookiecutter helps you generate project files
-  and directories following a pre-made template.
+           comment = c(ORCID = "0000-0002-7730-9511")),
+    person("National Research Data Infrastructure Germany", role = c("fnd"))
+  )
+Description: Generate project files and directories following a pre-made template.
   You can specify variables to customize file names and content, and
   flexibly adapt the template to your needs. Cookiecutter for R
   implements a subset of the excellent cookiecutter package for the
