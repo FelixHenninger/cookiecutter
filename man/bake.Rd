@@ -2,7 +2,7 @@
 % Please edit documentation in R/cookiecutter.r
 \name{bake}
 \alias{bake}
-\title{Fill a directory with files based on a cookiecutter-based template.}
+\title{Fill a directory with files based on a cookiecutter template.}
 \usage{
 bake(template, output_dir, extra_context = list(), overwrite = F, no_input = F)
 }
@@ -18,11 +18,51 @@ bake(template, output_dir, extra_context = list(), overwrite = F, no_input = F)
 \item{no_input}{Don't prompt for context variables
 specified in cookiecutter.json}
 }
+\value{
+No value
+}
 \description{
 This function takes a cookiecutter-compatible template directory and
 resolves template placeholders in both filenames and (for text files)
 content.
 }
-\author{
-Felix Henninger
+\details{
+\strong{template}
+
+Path to the template to apply. This can point to either a directory, or an
+archive of the same in \code{.zip}, \code{.tar} or \code{.tar.gz} formats.
+
+\strong{output_dir}
+
+Path of directory to output processed template files into. This will be
+filled based on the contents of the \code{template} option.
+
+\strong{extra_context}
+
+List of template variables to use in filling placeholders. (empty by default)
+
+\strong{overwrite}
+
+Whether to overwrite existing files. (defaults to \code{false}, and issues a
+message)
+
+\strong{no_input}
+
+Don't prompt the user for variable values specified in \code{cookiecutter.json}.
+This removes the need for interaction when applying a template.
+}
+\examples{
+# Extract a demo template
+# (this uses a bundled template and extracts information
+# into a temporary directory -- you'll have it easier
+# because you can insert the paths you want directly)
+cookiecutter::bake(
+  system.file('examples/demo.zip', package = 'cookiecutter'),
+  fs::path_temp('cookiecutter.demo'),
+  extra_context = list(
+    flavor = 'chocolate chip',
+    hot_beverage = 'coffee'
+  )
+)
+
 }

@@ -8,6 +8,7 @@ generate_files(
   template_dir = NA,
   output_dir = ".",
   context = list(),
+  context_prefix = NA,
   exclude = c(),
   overwrite = F
 )
@@ -19,6 +20,8 @@ generate_files(
 
 \item{context}{Data available in templates}
 
+\item{context_prefix}{Prefix key to apply to context data (see description)}
+
 \item{exclude}{Files to exclude, as an array of paths with respect to
 the template directory}
 
@@ -27,3 +30,4 @@ the template directory}
 \description{
 Generate a new directory from a template, given a predefined context
 }
+\keyword{internal}
