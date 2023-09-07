@@ -19,7 +19,7 @@ bake(template, output_dir, extra_context = list(), overwrite = F, no_input = F)
 specified in cookiecutter.json}
 }
 \value{
-No value
+None
 }
 \description{
 This function takes a cookiecutter-compatible template directory and

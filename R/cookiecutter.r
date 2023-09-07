@@ -11,7 +11,7 @@
 #' @param no_input Don't prompt for context variables
 #'  specified in cookiecutter.json
 #'
-#' @return No value
+#' @return None
 #'
 #' @details **template**
 #'
