@@ -6,7 +6,7 @@
 \usage{
 bake(
   template,
-  output_dir,
+  output_path,
   extra_context = list(),
   overwrite = FALSE,
   no_input = FALSE
@@ -15,7 +15,7 @@ bake(
 \arguments{
 \item{template}{Template to apply}
 
-\item{output_dir}{Directory to fill}
+\item{output_path}{Directory to fill}
 
 \item{extra_context}{Context variables to use while populating template}
 
@@ -38,7 +38,7 @@ content.
 Path to the template to apply. This can point to either a directory, or an
 archive of the same in \code{.zip}, \code{.tar} or \code{.tar.gz} formats.
 
-\strong{output_dir}
+\strong{output_path}
 
 Path of directory to output processed template files into. This will be
 filled based on the contents of the \code{template} option.

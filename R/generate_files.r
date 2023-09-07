@@ -11,18 +11,17 @@
 #' @keywords internal
 #'
 generate_files <- function(
-  template_dir=NA,
-  output_dir='.',
+  template_dir,
+  output_dir,
   context=list(),
   context_prefix=NA,
   exclude=c(),
   overwrite=FALSE
 ) {
-  if (is.na(template_dir))
+  if (missing(template_dir))
     rlang::abort('Please specify a template directory to start from')
-
-  # Use project directory if no target is supplied
-  if (output_dir == '.') output_dir <- usethis::proj_path()
+  if (missing(output_dir))
+    rlang::abort('Please specify an output directory to fill')
 
   # Iterate through source files
   template_files <- list.files(template_dir, recursive = TRUE)

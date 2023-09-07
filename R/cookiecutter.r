@@ -5,7 +5,7 @@
 #' content.
 #'
 #' @param template Template to apply
-#' @param output_dir Directory to fill
+#' @param output_path Directory to fill
 #' @param extra_context Context variables to use while populating template
 #' @param overwrite Whether to overwrite existing files
 #' @param no_input Don't prompt for context variables
@@ -18,7 +18,7 @@
 #' Path to the template to apply. This can point to either a directory, or an
 #' archive of the same in `.zip`, `.tar` or `.tar.gz` formats.
 #'
-#' @details **output_dir**
+#' @details **output_path**
 #'
 #' Path of directory to output processed template files into. This will be
 #' filled based on the contents of the `template` option.
@@ -54,7 +54,7 @@
 #' @export
 bake <- function(
   template,
-  output_dir,
+  output_path,
   extra_context=list(),
   overwrite=FALSE,
   no_input=FALSE
@@ -66,6 +66,14 @@ bake <- function(
     'application/zip'
     # TODO: could add .tar.xz; .tar.bz2 doesn't seem to be recognized by mime
   )
+
+  if (missing(output_path)) {
+    rlang::abort(paste(
+      'Please specify an output path.',
+      'We would like to make sure the files go where you want them,',
+      'so we\'d rather not guess.'
+    ))
+  }
 
   # Use template directory or extract archive if required
   if (fs::is_dir(template)) {
@@ -124,7 +132,7 @@ bake <- function(
   # Generate files
   generate_files(
     template_dir,
-    output_dir,
+    output_path,
     context,
     context_prefix='cookiecutter',
     exclude=c('cookiecutter.json'),

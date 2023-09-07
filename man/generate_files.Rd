@@ -5,8 +5,8 @@
 \title{Generate a new directory from a template, given a predefined context}
 \usage{
 generate_files(
-  template_dir = NA,
-  output_dir = ".",
+  template_dir,
+  output_dir,
   context = list(),
   context_prefix = NA,
   exclude = c(),
