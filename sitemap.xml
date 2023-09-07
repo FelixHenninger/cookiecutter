@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://felixhenninger.github.io/cookiecutter/404.html</loc>
+  </url>
+  <url>
+    <loc>https://felixhenninger.github.io/cookiecutter/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://felixhenninger.github.io/cookiecutter/index.html</loc>
+  </url>
+  <url>
+    <loc>https://felixhenninger.github.io/cookiecutter/reference/bake.html</loc>
+  </url>
+  <url>
+    <loc>https://felixhenninger.github.io/cookiecutter/reference/generate_files.html</loc>
+  </url>
+  <url>
+    <loc>https://felixhenninger.github.io/cookiecutter/reference/index.html</loc>
+  </url>
+</urlset>
