@@ -6,3 +6,4 @@
 ^pkgdown$
 ^\.github$
 ^cookiecutter.code-workspace$
+^cran-comments\.md$
