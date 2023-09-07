@@ -10,7 +10,7 @@ generate_files(
   context = list(),
   context_prefix = NA,
   exclude = c(),
-  overwrite = F
+  overwrite = FALSE
 )
 }
 \arguments{

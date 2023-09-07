@@ -56,8 +56,8 @@ bake <- function(
   template,
   output_dir,
   extra_context=list(),
-  overwrite=F,
-  no_input=F
+  overwrite=FALSE,
+  no_input=FALSE
 ) {
   # Supported archive file types
   archive_mimes <- c(

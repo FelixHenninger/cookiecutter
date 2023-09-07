@@ -4,7 +4,13 @@
 \alias{bake}
 \title{Fill a directory with files based on a cookiecutter template.}
 \usage{
-bake(template, output_dir, extra_context = list(), overwrite = F, no_input = F)
+bake(
+  template,
+  output_dir,
+  extra_context = list(),
+  overwrite = FALSE,
+  no_input = FALSE
+)
 }
 \arguments{
 \item{template}{Template to apply}

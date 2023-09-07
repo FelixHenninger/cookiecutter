@@ -16,7 +16,7 @@ generate_files <- function(
   context=list(),
   context_prefix=NA,
   exclude=c(),
-  overwrite=F
+  overwrite=FALSE
 ) {
   if (is.na(template_dir))
     rlang::abort('Please specify a template directory to start from')
@@ -25,7 +25,7 @@ generate_files <- function(
   if (output_dir == '.') output_dir <- usethis::proj_path()
 
   # Iterate through source files
-  template_files <- list.files(template_dir, recursive = T)
+  template_files <- list.files(template_dir, recursive = TRUE)
 
   # Add context prefix if specified
   if (!is.na(context_prefix)) {
