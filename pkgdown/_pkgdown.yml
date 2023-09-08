@@ -3,6 +3,8 @@ url: https://felixhenninger.github.io/cookiecutter
 authors:
   Felix Henninger:
     href: https://felixhenninger.com
+  National Research Data Infrastructure Germany:
+    href: https://berd-nfdi.de/
 
 template:
   bootstrap: 5
