@@ -13,7 +13,7 @@ The package implements the core functionality of the excellent and much more fle
 
 ### Installation 📦
 
-The package is on its way to CRAN, so that you can install it via
+The package is [available on CRAN](https://cran.r-project.org/web/packages/cookiecutter), so that you can install it via
 
 ```R
 install.packages('cookiecutter')
