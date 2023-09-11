@@ -1,0 +1,17 @@
+Title: Cookiecutter template
+Caption: Create a new project from a template
+Binding: template_project
+
+Parameter: template
+Widget: FileInput
+Label: Template
+
+Parameter: no_input
+Widget: CheckboxInput
+Label: Skip asking for template parameters
+Default: Off
+
+Parameter: overwrite
+Widget: CheckboxInput
+Label: Overwrite existing files
+Default: Off
