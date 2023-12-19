@@ -11,7 +11,7 @@ Authors@R: c(
           family = "Kreider",
           role = "aut",
           email = "aida.kreider99@gmail.com"),
-    person("National Research Data Infrastructure Germany", role = c("fnd"))
+    person("National Research Data Infrastructure Germany, BERD Consortium", role = c("fnd"))
   )
 Description: Generate project files and directories following a pre-made template.
   You can specify variables to customize file names and content, and
