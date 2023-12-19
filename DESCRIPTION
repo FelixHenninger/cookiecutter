@@ -7,6 +7,10 @@ Authors@R: c(
            role = c("aut", "cre", "cph"),
            email = "mailbox@felixhenninger.com",
            comment = c(ORCID = "0000-0002-7730-9511")),
+    person(given = "Aida",
+          family = "Kreider",
+          role = "aut",
+          email = "aida.kreider99@gmail.com"),
     person("National Research Data Infrastructure Germany", role = c("fnd"))
   )
 Description: Generate project files and directories following a pre-made template.
